@@ -9,7 +9,8 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `url(${data.urls.regular})`
-		document.getElementById("author").textContent = `<a href="${data.urls.regular}">By: ${data.user.name}</a>`
+		document.getElementById("author").innerHTML = `<a href="${data.urls.regular}">By: ${data.user.name}</a>
+        `
     })
     .catch(err => {
         // Use a default background image/author
