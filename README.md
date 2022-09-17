@@ -1,14 +1,15 @@
 # NewTab Extension
 
 
-## Final Preview: 
+## Requirements:
 
  ![design](Design.png)
 
 
-- You can change the color if  you want
-- You can change sizes and dimension but design must remain same
-- Design should change size or some colors when width increase from 600px. (design for mobile and Desktop)
+- Preview of Crypto currency updates
+- Displaying Current Weather
+- Current Time Display at the center
+- Changing of background when new tab is opened.
 
 ## Code
 ### HTML
