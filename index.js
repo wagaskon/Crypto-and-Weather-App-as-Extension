@@ -1,8 +1,15 @@
+/////////////////////////
+
+//  Background Image
+
+////////////////////////
+
+
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `url(${data.urls.regular})`
-		document.getElementById("author").textContent = `By: ${data.user.name}`
+		document.getElementById("author").textContent = `<a href="${data.urls.regular}">By: ${data.user.name}</a>`
     })
     .catch(err => {
         // Use a default background image/author
@@ -10,7 +17,11 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 )`
 		document.getElementById("author").textContent = `By: Dodi Achmad`
     })
+/////////////////////////
 
+//  Crypto Section
+
+////////////////////////
 fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     .then(res => {
         if (!res.ok) {
@@ -31,6 +42,13 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     })
     .catch(err => console.error(err))
 
+
+/////////////////////////
+
+//  Current Time
+
+////////////////////////
+
 function getCurrentTime() {
     const date = new Date()
     document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
@@ -38,6 +56,12 @@ function getCurrentTime() {
 
 setInterval(getCurrentTime, 1000)
 
+
+/////////////////////////
+
+//  Weather Section
+
+////////////////////////
 navigator.geolocation.getCurrentPosition(position => {
     fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
         .then(res => {
